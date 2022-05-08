@@ -1,10 +1,33 @@
-
-
     <div class="jumbotron">
-        <h1>Local Authentication Demo</h1>
-        <p>Demonstrating Node/Express features</p>
+        <h1>Album Saver</h1>
+        <p>Search save and view your favorite albums!</p>
+        
     </div>
-    
+    <br>
+    <form action="/search" method="POST">
+        <p>Search All Albums</p>
+
+        <label for="fname">Search:</label>
+        <input type="text" id="fname" name="fname">
+        <input type="submit">
+
+<!-- 
+        <select class="custom-select" id="name" name="type">
+            <option selected>Open this select menu</option>
+            <option value="albums">albums</option>
+            <option value="artists">artists</option>
+            <option value="episodes">episodes</option>
+            <option value="genres">genres</option>
+            <option value="playlists">playlists</option>
+            <option value="podcasts">podcasts</option>
+            <option value="tracks">tracks</option>
+            <option value="users">users</option>
+          </select> -->
+    </form>
+
+    <form action="/library" method="POST">
+        <label for="libsearch">Search Your Library: </label>
+        <input type="text" name="libsearch" id="libsearch">
+        <input type="submit">
+    </form>
     LoggedIn: <%= loggedIn %>
-
-

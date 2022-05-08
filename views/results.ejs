@@ -1,0 +1,63 @@
+<h1>Albums</h1>
+<div style="border-top: 1px solid black;">
+  <% for(var i=0; i<queryAlbums.length; i++) { %>
+    <div style="display: flex; 
+    align-items: center; 
+    border-bottom: 1px solid black;
+    padding: 10px;">
+    <form action="/save" method="POST">
+      <input type="hidden" name="artistFormName" value=" <%= queryAlbums[i].data.name %>">
+      <input type="submit" value="save">
+
+    </form>
+      <img src=<%= queryAlbums[i].data.coverArt.sources[1].url %> alt="">
+      <p style="margin-bottom: 0; margin-left: 10px;">
+        <%= queryAlbums[i].data.name %>
+      </p>
+      <!--  -->
+    
+    </div>
+  <% } %>
+</div>
+
+
+<!-- <h1>Artists</h1>
+<% for(var i=0; i<queryArtists.length; i++) { %>
+  <div style="display: flex; align-items: center; ">
+    <img style="border-radius: 50%; height: 160px; width: 160px;" src=<%= filtered2.url %> alt="artistImage">
+    <h3 style="margin-bottom: 0; margin-left: 10px;"><%= queryArtists[i].data.profile.name %></h3>
+    
+    <form action="/save" method="POST">
+      <img style="border-radius: 50%; height: 160px; width: 160px;" src=<%= filtered2.url %> alt="">
+      <h3><%= queryArtists[i].data.profile.name %></h3>
+      <input type="hidden" name="artistFormName" value="<%= queryArtists[i].data.profile.name %>">
+      <input type="submit" value="save">
+    </form>
+  </div>
+<% } %> -->
+
+<h1>Tracks</h1>
+<% for(var i=0; i<queryTracks.length; i++) { %>
+  <div style="display: flex;">
+    <%= i %>
+    <h3>
+      <%= queryTracks[i].data.name %> <a href=<%= queryTracks[i].data.uri %></a>
+    </h3>
+
+    <!-- <h3><a href=<%= queryTracks[i].data.uri %><%= queryTracks[i].data.name %></a></h3> -->
+
+    <!-- <a href=<%= queryTracks[i].data.uri %><%= queryTracks[i].data.name %></a> -->
+  
+  <hr>
+  </div>
+<% } %>
+
+<h1>TopResults</h1>
+<% for(var i=0; i<queryTopResults.length; i++) { %>
+  <div style="display: flex;">
+
+    <a href=<%= queryTopResults[i].data.uri %>a</a>
+  
+  <hr>
+  </div>
+<% } %>
